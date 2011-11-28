@@ -309,7 +309,7 @@ class LatexDocument(object):
         dialog.destroy()
     
     def on_view_slide(self, widget):
-        if widget.get_active():
+        if widget.get_active() and len(self.slidelist_view.get_selected_items()) > 0:
             selection = self.slidelist_view.get_selected_items()[0]
             # This should be okay except for weird race conditions....
             currslide, = self.pages.get(self.pages.get_iter(selection), 0)
