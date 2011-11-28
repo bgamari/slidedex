@@ -11,11 +11,12 @@ import gtk
 import glib
 import pango
 import poppler
+from pkg_resources import resource_string
 import gtksourceview2 as sourceview
-from misc import SEP, LIBPATH
-from pdfviewer import PDFViewer
-from latexslide import LatexSlide
-from commandexecutor import CommandExecutor
+from slidedex.misc import SEP
+from slidedex.pdfviewer import PDFViewer
+from slidedex.latexslide import LatexSlide
+from slidedex.commandexecutor import CommandExecutor
 
 
 class ObstinateUserError(Exception):
@@ -37,7 +38,7 @@ class EventDispatcher(object):
 class LatexDocument(object):
     def __init__(self, filename=None):
         builder = gtk.Builder()
-        builder.add_from_file(os.path.join(LIBPATH, "mainwindow.glade"))
+        builder.add_from_string(resource_string("slidedex", "mainwindow.glade"))
         self.get_objects(builder)
         vbox = builder.get_object("vbox1")
         hbox = builder.get_object("hbox1")

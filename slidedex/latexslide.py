@@ -10,7 +10,7 @@ import tempfile
 import glob
 import gtk
 import gtksourceview2 as sourceview
-from misc import SEP, render_to_pixbuf
+from slidedex.misc import SEP, render_to_pixbuf
 
 LATEXLANG = sourceview.language_manager_get_default().get_language('latex')
 

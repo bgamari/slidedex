@@ -7,7 +7,7 @@
 
 import gtk
 import poppler
-from misc import render_to_pixbuf
+from slidedex.misc import render_to_pixbuf
 
 
 class PDFViewer(object):

@@ -11,13 +11,8 @@ import os
 import sys
 import gtk
 
-SCRIPTPATH = os.path.dirname(os.path.realpath(os.path.abspath(sys.argv[0])))
-LIBPATH = os.path.join(os.path.dirname(SCRIPTPATH), 'lib')
-
-sys.path.insert(0, LIBPATH)
-import misc
-misc.LIBPATH = LIBPATH
-from latexdocument import LatexDocument
+from slidedex import misc
+from slidedex.latexdocument import LatexDocument
 
 if len(sys.argv) > 1:
     filename = sys.argv[1]
